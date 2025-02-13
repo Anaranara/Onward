@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://duajw34x0783s"]
+
+[ext_resource type="PackedScene" uid="uid://dy4qlfow6s05m" path="res://Interact/interaction_area.tscn" id="1_6nief"]
+[ext_resource type="Script" path="res://Interact/npc.gd" id="1_dcdja"]
+[ext_resource type="Resource" uid="uid://cg0j7jlrt6e66" path="res://Interact/dialogue.dialogue" id="2_af6ut"]
+[ext_resource type="Texture2D" uid="uid://dc2j307i6ahih" path="res://Player/texture/Char2.png" id="2_r8d0h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s8k8b"]
+radius = 2.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_502sj"]
+height = 1.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc4ci"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0, 0.321511, 0.321511, 1)
+albedo_texture = ExtResource("2_r8d0h")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_cwhg4"]
+material = SubResource("StandardMaterial3D_kc4ci")
+size = Vector2(1.3, 1.3)
+
+[node name="NPC" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_dcdja")
+dialogue_resource = ExtResource("2_af6ut")
+play = " test"
+
+[node name="Interaction_area" parent="." instance=ExtResource("1_6nief")]
+action_name = "talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction_area"]
+shape = SubResource("SphereShape3D_s8k8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_502sj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_cwhg4")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4d1l6x8ekihe"]
+
+[ext_resource type="Texture2D" uid="uid://bq23o4bdqgw0p" path="res://UI/button/pause_button_normal.png" id="1_x0nli"]
+[ext_resource type="Texture2D" uid="uid://bgoga1m66wir" path="res://UI/button/pause_button_press.png" id="2_kbj8a"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause_button" type="TouchScreenButton" parent="."]
+self_modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1008, 48)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_x0nli")
+texture_pressed = ExtResource("2_kbj8a")

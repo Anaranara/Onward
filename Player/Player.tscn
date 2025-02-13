@@ -1,0 +1,832 @@
+[gd_scene load_steps=60 format=3 uid="uid://0vkc66tx0cym"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_er4ab"]
+[ext_resource type="Texture2D" uid="uid://cnajds7an72cc" path="res://Player/texture/Char11.png" id="2_0i47b"]
+[ext_resource type="Texture2D" uid="uid://mg3s2s3rsmev" path="res://Player/texture/Char20.png" id="3_kifjo"]
+[ext_resource type="Texture2D" uid="uid://bvmbgx1lp7qt" path="res://Player/texture/Char23.png" id="4_at7qv"]
+[ext_resource type="Texture2D" uid="uid://dc2j307i6ahih" path="res://Player/texture/Char2.png" id="5_a1mvo"]
+[ext_resource type="Texture2D" uid="uid://bugp3o1tcmc5w" path="res://Player/texture/Char14.png" id="6_4qptw"]
+[ext_resource type="Texture2D" uid="uid://xlm7wlx2djot" path="res://Player/texture/Char17.png" id="7_fkxo5"]
+[ext_resource type="Texture2D" uid="uid://bwe4ien4dhs03" path="res://Player/texture/Char5.png" id="8_xa1s1"]
+[ext_resource type="Texture2D" uid="uid://cgtyx1eg1waak" path="res://Player/texture/Char8.png" id="9_rq73f"]
+[ext_resource type="Texture2D" uid="uid://cne4kebo3pebs" path="res://Player/texture/Char10.png" id="10_dbwh8"]
+[ext_resource type="Texture2D" uid="uid://cyoohtqq45dlk" path="res://Player/texture/Char19.png" id="11_aeyuv"]
+[ext_resource type="Texture2D" uid="uid://qujt8ked7bmb" path="res://Player/texture/Char22.png" id="12_ww61t"]
+[ext_resource type="Texture2D" uid="uid://uocukfvjjqcx" path="res://Player/texture/Char1.png" id="13_e8yut"]
+[ext_resource type="Texture2D" uid="uid://ckfyvvtyrb4xn" path="res://Player/texture/Char13.png" id="14_cct13"]
+[ext_resource type="Texture2D" uid="uid://cnrvj1p61mons" path="res://Player/texture/Char16.png" id="15_88olb"]
+[ext_resource type="Texture2D" uid="uid://cft5vrlwv8v5i" path="res://Player/texture/Char4.png" id="16_i3uqf"]
+[ext_resource type="Texture2D" uid="uid://cwbpxph3qy3gm" path="res://Player/texture/Char7.png" id="17_twb7u"]
+[ext_resource type="Texture2D" uid="uid://dagkjds85lwy" path="res://Player/texture/Char21.png" id="18_clcfr"]
+[ext_resource type="Texture2D" uid="uid://dntas4vb5men2" path="res://Player/texture/Char24.png" id="19_kbeof"]
+[ext_resource type="Texture2D" uid="uid://c2m4ur1ocm2o1" path="res://Player/texture/Char12.png" id="20_q1afk"]
+[ext_resource type="Texture2D" uid="uid://dwd435vnfr5pr" path="res://Player/texture/Char15.png" id="21_oweq7"]
+[ext_resource type="Texture2D" uid="uid://c1ml1gxwkg8ys" path="res://Player/texture/Char18.png" id="22_i5q06"]
+[ext_resource type="Texture2D" uid="uid://dyg3a5u1flvke" path="res://Player/texture/Char3.png" id="23_mdpgo"]
+[ext_resource type="Texture2D" uid="uid://7fssdmwuh5yp" path="res://Player/texture/Char6.png" id="24_4um44"]
+[ext_resource type="Texture2D" uid="uid://562iyaruqn2k" path="res://Player/texture/Char9.png" id="25_84im2"]
+[ext_resource type="AudioStream" uid="uid://ducmwmpby7atd" path="res://Audio/jump_sfx.mp3" id="27_7c27l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_humvt"]
+radius = 0.35
+height = 1.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32ies"]
+transparency = 4
+albedo_texture = ExtResource("5_a1mvo")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s17f"]
+render_priority = -1
+next_pass = SubResource("StandardMaterial3D_32ies")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+no_depth_test = true
+shading_mode = 2
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("5_a1mvo")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+texture_filter = 0
+texture_repeat = false
+disable_receive_shadows = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_yvxbt"]
+material = SubResource("StandardMaterial3D_5s17f")
+size = Vector2(1.3, 1.3)
+center_offset = Vector3(0, 0.025, 0)
+
+[sub_resource type="Animation" id="Animation_fdi3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_a1mvo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_a1mvo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adlif"]
+_data = {
+"RESET": SubResource("Animation_fdi3e")
+}
+
+[sub_resource type="Animation" id="Animation_2ax4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0i47b")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0i47b")]
+}
+
+[sub_resource type="Animation" id="Animation_pleku"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_kifjo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_kifjo")]
+}
+
+[sub_resource type="Animation" id="Animation_4lqhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_at7qv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_at7qv")]
+}
+
+[sub_resource type="Animation" id="Animation_0hhif"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_a1mvo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_a1mvo")]
+}
+
+[sub_resource type="Animation" id="Animation_ihi2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_4qptw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_4qptw")]
+}
+
+[sub_resource type="Animation" id="Animation_1b3th"]
+resource_name = "new_animation_2"
+length = 0.001
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_fkxo5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_fkxo5")]
+}
+
+[sub_resource type="Animation" id="Animation_t7m1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_xa1s1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_xa1s1")]
+}
+
+[sub_resource type="Animation" id="Animation_bhm36"]
+resource_name = "new_animation"
+length = 0.001
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_rq73f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_rq73f")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_popi2"]
+_data = {
+"back_idle": SubResource("Animation_2ax4t"),
+"back_left_idle": SubResource("Animation_pleku"),
+"back_right_idle": SubResource("Animation_4lqhr"),
+"front_idle": SubResource("Animation_0hhif"),
+"front_left_idle": SubResource("Animation_ihi2u"),
+"front_right_idle": SubResource("Animation_1b3th"),
+"left_idle": SubResource("Animation_t7m1f"),
+"right_idle": SubResource("Animation_bhm36")
+}
+
+[sub_resource type="Animation" id="Animation_higyt"]
+length = 0.001
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_dbwh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_dbwh8")]
+}
+
+[sub_resource type="Animation" id="Animation_s1vix"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_aeyuv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_aeyuv")]
+}
+
+[sub_resource type="Animation" id="Animation_wfbtd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_ww61t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_ww61t")]
+}
+
+[sub_resource type="Animation" id="Animation_vt84x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e8yut")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e8yut")]
+}
+
+[sub_resource type="Animation" id="Animation_c1u8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_cct13")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_cct13")]
+}
+
+[sub_resource type="Animation" id="Animation_y2rsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_88olb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_88olb")]
+}
+
+[sub_resource type="Animation" id="Animation_17v2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_i3uqf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_i3uqf")]
+}
+
+[sub_resource type="Animation" id="Animation_yomgs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_twb7u")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_twb7u")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyda7"]
+_data = {
+"back_jump": SubResource("Animation_higyt"),
+"back_left_jump": SubResource("Animation_s1vix"),
+"back_right_jump": SubResource("Animation_wfbtd"),
+"front_jump": SubResource("Animation_vt84x"),
+"front_left_jump": SubResource("Animation_c1u8a"),
+"front_right_jump": SubResource("Animation_y2rsw"),
+"left_jump": SubResource("Animation_17v2k"),
+"right_jump": SubResource("Animation_yomgs")
+}
+
+[sub_resource type="Animation" id="Animation_sd8mb"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_aeyuv"), ExtResource("3_kifjo"), ExtResource("18_clcfr"), ExtResource("3_kifjo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_aeyuv"), ExtResource("3_kifjo"), ExtResource("18_clcfr"), ExtResource("3_kifjo")]
+}
+
+[sub_resource type="Animation" id="Animation_qaljj"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_ww61t"), ExtResource("4_at7qv"), ExtResource("19_kbeof"), ExtResource("4_at7qv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_ww61t"), ExtResource("4_at7qv"), ExtResource("19_kbeof"), ExtResource("4_at7qv")]
+}
+
+[sub_resource type="Animation" id="Animation_8g45w"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_dbwh8"), ExtResource("2_0i47b"), ExtResource("20_q1afk"), ExtResource("2_0i47b")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_dbwh8"), ExtResource("2_0i47b"), ExtResource("20_q1afk"), ExtResource("2_0i47b")]
+}
+
+[sub_resource type="Animation" id="Animation_sajbt"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_cct13"), ExtResource("6_4qptw"), ExtResource("21_oweq7"), ExtResource("6_4qptw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_cct13"), ExtResource("6_4qptw"), ExtResource("21_oweq7"), ExtResource("6_4qptw")]
+}
+
+[sub_resource type="Animation" id="Animation_eq8qa"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_88olb"), ExtResource("7_fkxo5"), ExtResource("22_i5q06"), ExtResource("7_fkxo5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_88olb"), ExtResource("7_fkxo5"), ExtResource("22_i5q06"), ExtResource("7_fkxo5")]
+}
+
+[sub_resource type="Animation" id="Animation_6t50o"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_e8yut"), ExtResource("5_a1mvo"), ExtResource("23_mdpgo"), ExtResource("5_a1mvo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_e8yut"), ExtResource("5_a1mvo"), ExtResource("23_mdpgo"), ExtResource("5_a1mvo")]
+}
+
+[sub_resource type="Animation" id="Animation_bmt6v"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_i3uqf"), ExtResource("8_xa1s1"), ExtResource("24_4um44"), ExtResource("8_xa1s1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_i3uqf"), ExtResource("8_xa1s1"), ExtResource("24_4um44"), ExtResource("8_xa1s1")]
+}
+
+[sub_resource type="Animation" id="Animation_g1y10"]
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_twb7u"), ExtResource("9_rq73f"), ExtResource("25_84im2"), ExtResource("9_rq73f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:mesh:material:next_pass:albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_twb7u"), ExtResource("9_rq73f"), ExtResource("25_84im2"), ExtResource("9_rq73f")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_np002"]
+_data = {
+"back_left_walk": SubResource("Animation_sd8mb"),
+"back_right_walk": SubResource("Animation_qaljj"),
+"back_walk": SubResource("Animation_8g45w"),
+"front_left_walk": SubResource("Animation_sajbt"),
+"front_right_walk": SubResource("Animation_eq8qa"),
+"front_walk": SubResource("Animation_6t50o"),
+"left_walk": SubResource("Animation_bmt6v"),
+"right_walk": SubResource("Animation_g1y10")
+}
+
+[node name="Char" type="CharacterBody3D" groups=["player", "trigger"]]
+collision_layer = 3
+script = ExtResource("1_er4ab")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_humvt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.857167, 0.515038, 0, -0.515038, 0.857167, 0, 6, 10)
+projection = 1
+size = 10.0
+near = 0.01
+far = 100.0
+
+[node name="Sprites" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_yvxbt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_adlif"),
+"idle": SubResource("AnimationLibrary_popi2"),
+"jump": SubResource("AnimationLibrary_vyda7"),
+"walk": SubResource("AnimationLibrary_np002")
+}
+autoplay = "idle/front_idle"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("27_7c27l")
+volume_db = -60.0
+unit_size = 5.0
+bus = &"SFX"

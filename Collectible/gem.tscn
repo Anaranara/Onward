@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1s48mbp4a3u3"]
+
+[ext_resource type="Script" path="res://Collectible/gem.gd" id="1_8ybdc"]
+[ext_resource type="Texture2D" uid="uid://bbfm3ncoskcp5" path="res://Collectible/Texture/Gem1.png" id="2_8patk"]
+[ext_resource type="Texture2D" uid="uid://cfsci65phgkf5" path="res://Collectible/Texture/Gem2.png" id="3_gmxiw"]
+[ext_resource type="Texture2D" uid="uid://bxnvgo5ukk4ha" path="res://Collectible/Texture/Gem3.png" id="4_m3rwb"]
+[ext_resource type="Texture2D" uid="uid://cxfhteei30w8t" path="res://Collectible/Texture/Gem4.png" id="5_sbea7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bu32q"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_8patk")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_5gtme"]
+material = SubResource("StandardMaterial3D_bu32q")
+
+[sub_resource type="Animation" id="Animation_m8m28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_8patk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_06o42"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_8patk"), ExtResource("3_gmxiw"), ExtResource("4_m3rwb"), ExtResource("5_sbea7"), ExtResource("2_8patk"), ExtResource("3_gmxiw"), ExtResource("4_m3rwb"), ExtResource("5_sbea7"), ExtResource("2_8patk"), ExtResource("3_gmxiw"), ExtResource("4_m3rwb"), ExtResource("5_sbea7"), ExtResource("2_8patk"), ExtResource("3_gmxiw"), ExtResource("4_m3rwb"), ExtResource("5_sbea7"), ExtResource("2_8patk"), ExtResource("3_gmxiw"), ExtResource("4_m3rwb"), ExtResource("5_sbea7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0t1c"]
+_data = {
+"RESET": SubResource("Animation_m8m28"),
+"spin": SubResource("Animation_06o42")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s432y"]
+radius = 0.3
+height = 1.0
+
+[node name="gem" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.7, 0)
+script = ExtResource("1_8ybdc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5gtme")
+
+[node name="gem_player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m0t1c")
+}
+autoplay = "spin"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_s432y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

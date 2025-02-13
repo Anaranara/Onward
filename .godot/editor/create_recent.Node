@@ -1,0 +1,14 @@
+AudioStreamPlayer3D
+AudioListener3D
+Node3D
+AudioStreamPlayer
+Label
+CollisionShape3D
+Control
+AnimationPlayer
+MeshInstance3D
+Area3D
+TouchScreenButton
+Button
+RigidBody3D
+CharacterBody3D

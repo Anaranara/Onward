@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7nlctikgig0o"]
+
+[ext_resource type="FontFile" uid="uid://unnq7i7d78bk" path="res://UI/font/superstar.ttf" id="1_fr2th"]
+[ext_resource type="Script" path="res://Interact/interaction_manager.gd" id="1_je40b"]
+
+[node name="Interaction_manager" type="Node3D"]
+script = ExtResource("1_je40b")
+
+[node name="Label3D" type="Label3D" parent="."]
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+text = "texts"
+font = ExtResource("1_fr2th")
+font_size = 100
+outline_size = 0

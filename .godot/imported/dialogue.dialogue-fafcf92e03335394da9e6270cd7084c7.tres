@@ -1,0 +1,152 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_yjbno"]
+
+[resource]
+script = ExtResource("1_yjbno")
+using_states = PackedStringArray()
+titles = {
+"continue": "4",
+"test": "1"
+}
+character_names = PackedStringArray("Shadow")
+first_title = "0"
+lines = {
+"0": {
+"id": "0",
+"next_id": "1",
+"type": "title"
+},
+"1": {
+"character": "Shadow",
+"id": "1",
+"next_id": "2",
+"text": "hey!",
+"type": "dialogue"
+},
+"10": {
+"character": "Shadow",
+"id": "10",
+"next_id": "11",
+"text": "or is it? i just show you something... [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]that[/rainbow]",
+"type": "dialogue"
+},
+"11": {
+"id": "11",
+"is_snippet": false,
+"next_id": "4",
+"next_id_after": "",
+"type": "goto"
+},
+"12": {
+"id": "12",
+"next_id": "13",
+"text": "*silent*",
+"type": "response"
+},
+"13": {
+"character": "Shadow",
+"id": "13",
+"next_id": "14",
+"text": "....",
+"type": "dialogue"
+},
+"14": {
+"character": "Shadow",
+"id": "14",
+"next_id": "15",
+"text": "........",
+"type": "dialogue"
+},
+"15": {
+"id": "15",
+"next_id": "16",
+"text": "*Quite momment keep going and you decide to end*.",
+"type": "dialogue"
+},
+"16": {
+"id": "16",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"17": {
+"id": "17",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"2": {
+"id": "2",
+"is_snippet": false,
+"next_id": "4",
+"next_id_after": "",
+"type": "goto"
+},
+"3": {
+"id": "3",
+"next_id": "4",
+"type": "title"
+},
+"4": {
+"character": "Shadow",
+"id": "4",
+"next_id": "5",
+"text": "need help?",
+"type": "dialogue"
+},
+"5": {
+"id": "5",
+"next_id": "6",
+"responses": PackedStringArray("5", "8", "12"),
+"text": "ughhh... what is this?",
+"type": "response"
+},
+"6": {
+"character": "Shadow",
+"id": "6",
+"next_id": "7",
+"text": "well this is a game.",
+"type": "dialogue"
+},
+"7": {
+"id": "7",
+"is_snippet": false,
+"next_id": "4",
+"next_id_after": "",
+"type": "goto"
+},
+"8": {
+"id": "8",
+"next_id": "9",
+"text": "Can you show me something?",
+"type": "response"
+},
+"9": {
+"character": "Shadow",
+"id": "9",
+"next_id": "10",
+"text": "no [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][wave amp = 20.0 freq=5.0 connected=1]apparently[/wave][/rainbow]",
+"type": "dialogue"
+}
+}
+raw_text = "~ test
+Shadow: hey!
+=> continue
+~ continue
+Shadow: need help?
+- ughhh... what is this?
+	Shadow: well this is a game.
+	=> continue
+- Can you show me something?
+	Shadow: no [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][wave amp = 20.0 freq=5.0 connected=1]apparently[/wave][/rainbow]
+	Shadow: or is it? i just show you something... [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]that[/rainbow]
+	=> continue
+- *silent*
+	Shadow: ....
+	Shadow: ........
+	*Quite momment keep going and you decide to end*.
+=> END"
+metadata/dialogue_manager_version = "3.2.0"

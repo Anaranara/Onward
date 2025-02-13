@@ -1,0 +1,13 @@
+res://Test world/test_platform.tscn
+res://Test world/terrain.tres
+res://Audio/audio_global.gd
+res://Test world/Global_Var.gd
+res://Player/Player.tscn
+res://Interact/npc.tscn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn
+res://Interact/interaction_area.tscn
+res://UI/control.tscn
+res://Player/player.gd
+res://Test world/Level1.tres
+res://World/test_platform.tscn
+res://World/Level1.tres

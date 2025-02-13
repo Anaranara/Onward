@@ -1,0 +1,29 @@
+res://Import/Mat/block_mat.001.tres::4bfa244892b93d671aa405c237cd2eda::1736837264::res://.godot/exported/133200997/export-9524295a4381264742fca64068cf937c-block_mat.001.res
+res://Import/Mat/wall_mat.tres::c85a16b807f358976b3bc4d62b9e93bf::1736837264::res://.godot/exported/133200997/export-3d68e8f69b6182c8264e3ea4f4af62e0-wall_mat.res
+res://Import/Mat/stair_mat.tres::ba6c77262b240233ee67ea7925d2d826::1736837264::res://.godot/exported/133200997/export-df2b42f08c73e867fb159a544148ada9-stair_mat.res
+res://Player/Player.tscn::e7406348606566a92721e455c91da753::1738888089::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
+res://Test world/Gridmap/tiles.tscn::fa8c23992d25cf7b9d1dd188696044f1::1737436948::res://.godot/exported/133200997/export-55972e96af65953f5c30e2a494d1dc80-tiles.scn
+res://Test world/terrain.tres::4ebc80c529e9ce674d6680b626bbf144::1738887237::res://.godot/exported/133200997/export-821f6b01064348aefbbd78076a1b0358-terrain.res
+res://Test world/test_platform.tscn::c632c05ce0f6a55438fa6b1da225c702::1738888089::res://.godot/exported/133200997/export-06a99ecdd2fd77f7af516150d0e87e5f-test_platform.scn
+res://addons/virtual_joystick/test/test.tscn::60299157fb2f850aa88796735369d4c0::1736913919::res://.godot/exported/133200997/export-65fc1102b221e3c86f8828aab5faf636-test.scn
+res://addons/virtual_joystick/virtual_joystick_scene.tscn::77e7f616985b06c999b4a99f5fee285b::1737081279::res://.godot/exported/133200997/export-4fefb2d1c978e429fe9cfeba8aa59129-virtual_joystick_scene.scn
+res://Interact/interaction_area.tscn::e5715aa497f5ed4dd916676e15bb8ebd::1737439402::res://.godot/exported/133200997/export-26c21f0328f1be25982dd57ec97f4eba-interaction_area.scn
+res://Interact/interaction_manager.tscn::75b679ea769868c908bd7aa4ebc3089f::1737439417::res://.godot/exported/133200997/export-22dab65d55339773d9d02bb7024ab8f5-interaction_manager.scn
+res://Interact/npc.tscn::3fe82640278fbffb101b25776007ce4a::1738888089::res://.godot/exported/133200997/export-ce43e61f9caae707b0a5818a6deaddd0-npc.scn
+res://UI/control.tscn::d59f26678c992da3ccb3afde668a14ba::1738888089::res://.godot/exported/133200997/export-baad99ae4c80f6ee199cfe3d99e31f25-control.scn
+res://addons/dialogue_manager/components/editor_property/editor_property_control.tscn::1ac5a656b8ebd0c1c3f388fbabb13108::1738210952::res://.godot/exported/133200997/export-e6551c697be622f6f28de3ce27c66911-editor_property_control.scn
+res://addons/dialogue_manager/components/editor_property/resource_button.tscn::98d9ef89ece54c5a65394b8e3e429616::1738210952::res://.godot/exported/133200997/export-d6982417a6d4bbaa52c872e8d58f148a-resource_button.scn
+res://addons/dialogue_manager/components/code_edit.tscn::1d6237b7eedf8940a34e1c26ce017d60::1738210952::res://.godot/exported/133200997/export-afb545b170719e27a7fd3f1340116b10-code_edit.scn
+res://addons/dialogue_manager/components/download_update_panel.tscn::bbd0652bfe33375ab7df26ce37556bec::1738210952::res://.godot/exported/133200997/export-dd2309c54bebb1b8b4e2968b0836701e-download_update_panel.scn
+res://addons/dialogue_manager/components/errors_panel.tscn::87e2e2fc13b287f96753f502c9ab62e2::1738210952::res://.godot/exported/133200997/export-ea6e1bfc6d22f187ea4da24ace7b5dce-errors_panel.scn
+res://addons/dialogue_manager/components/files_list.tscn::0c09db48503d22205521a7f538ac0cf6::1738210952::res://.godot/exported/133200997/export-2a28997d3f2fb7eefb2a8324333da88f-files_list.scn
+res://addons/dialogue_manager/components/find_in_files.tscn::a70e35d5f6718053f22ad04e350d0ccf::1738210952::res://.godot/exported/133200997/export-60c9c2fb186c3ec58bf069f3b83f71d0-find_in_files.scn
+res://addons/dialogue_manager/components/search_and_replace.tscn::dfb154d698389bc9220dd0c2a3691427::1738210952::res://.godot/exported/133200997/export-d227edfbcd00f694e71f0a4ef2516c28-search_and_replace.scn
+res://addons/dialogue_manager/components/title_list.tscn::09e0ee2d84e815c3efd1174caba6cd76::1738210952::res://.godot/exported/133200997/export-3f7e1494d2ca6bb96a353ad7ff2c972f-title_list.scn
+res://addons/dialogue_manager/components/update_button.tscn::106577a44370660f6e454de473aa23b9::1738210952::res://.godot/exported/133200997/export-7ca55931d1608d9ad1448730abe1df8e-update_button.scn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn::944c790ab97f50d9ba332e058142bfef::1738888089::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
+res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn::7243ddd7ecf8f502ab771fb7916c2a7a::1738379672::res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn
+res://addons/dialogue_manager/views/main_view.tscn::d88206d26c52c950b422ae4dd4fc715b::1738379671::res://.godot/exported/133200997/export-378867351062275ea9ff7cce9c21c795-main_view.scn
+res://addons/dialogue_manager/dialogue_label.tscn::d1cd2e100a3ba7c1d71909b273c69ab4::1738210952::res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn
+res://addons/dialogue_manager/test_scene.tscn::1c4f0614e6fdd1dd8eccbe244b1175c7::1738210953::res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn
+res://UI/pause.tscn::25bb2f51e795ff9f228d465938b62259::1737442244::res://.godot/exported/133200997/export-7a18a118a2a986d5151f2f90577c8406-pause.scn
